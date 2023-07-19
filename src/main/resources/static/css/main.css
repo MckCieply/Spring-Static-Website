@@ -1,0 +1,33 @@
+@font-face {
+    font-family: GloomyThings;
+    src: url("GloomyThings-3zBv3.ttf");
+}
+body{
+    background-image: url("../images/background.jpg");
+    max-height:100%;
+    max-width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    color: ghostwhite;
+    font-size: x-large;
+}
+div{
+    margin: 5vh 20vw;
+    height: 90vh;
+    width: 60vw;
+    background-color: rgba(139,0,0,0.8);
+
+
+    text-align: center;
+    font-family: GloomyThings;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: #070606;
+    border-radius: 10px;
+
+    box-shadow: inset 0 0 30vh 2vw #070606, 0 0 40vw 5vw #070606;
+
+
+}
