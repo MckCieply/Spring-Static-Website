@@ -8,4 +8,9 @@ public class pageController {
     public String index() {
         return "index";
     }
+
+    @RequestMapping(value = "/countries")
+    public String countries() {
+        return "countries";
+    }
 }
