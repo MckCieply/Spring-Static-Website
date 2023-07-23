@@ -12,7 +12,7 @@ body{
     color: ghostwhite;
     font-size: x-large;
 }
-div{
+.container{
     /*padding: 2.5vh 2.5vw;*/
     margin: 5vh 20vw;
     height: 90vh;
