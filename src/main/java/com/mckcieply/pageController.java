@@ -13,4 +13,9 @@ public class pageController {
     public String countries() {
         return "countries";
     }
+
+    @RequestMapping(value = "/contact")
+    public String contact() {
+        return "contact";
+    }
 }
