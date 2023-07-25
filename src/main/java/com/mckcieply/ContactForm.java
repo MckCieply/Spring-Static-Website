@@ -3,7 +3,7 @@ package com.mckcieply;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-public class NumberForm {
+public class ContactForm {
     @NotNull
     @Size(min=9, max=12)
     private int number;
@@ -29,8 +29,9 @@ public class NumberForm {
 
     @Override
     public String toString() {
-        return "NumberForm{" +
+        return "ContactForm{" +
                 "number=" + number +
+                ", email='" + email + '\'' +
                 '}';
     }
 }
