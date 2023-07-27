@@ -1,19 +1,22 @@
+@import "forms.css";
+
 @font-face {
     font-family: GloomyThings;
     src: url("GloomyThings-3zBv3.ttf");
 }
 body{
     background-image: url("../images/background.jpg");
-    max-height:100%;
+    max-height: 100%;
     max-width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
+    box-sizing: border-box;
 
     color: ghostwhite;
     font-size: x-large;
 }
 .container{
-    /*padding: 2.5vh 2.5vw;*/
+    padding: 0 2.5vw;
     margin: 5vh 20vw;
     height: 90vh;
     width: 60vw;
@@ -32,4 +35,20 @@ body{
 }
 ol{
     text-align: left;
+}
+
+/*Scrollbar*/
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track{
+    background: rgb(0,0,0);
+}
+::-webkit-scrollbar-thumb {
+    background: #ce0000;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #a30000;
 }

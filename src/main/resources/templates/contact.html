@@ -8,15 +8,21 @@
 <body>
     <div class="container">
 <!--        th:action changes where its redirected-->
-        <form th:action="index" th:method="post" th:object="${contact}">
-            <label for="email"> email</label>
-            <input type="email" id="email" th:field="*{email}">
-            <br><span></span><br>
-            <label for="phone"> phone</label>
-            <input type="text" id="phone" th:field="*{number}">
-            <span></span><br>
-            <input type="submit" value="Send">
-        </form>
+        <div class = "login-box">
+            <form th:action="index" th:method="post" th:object="${contact}">
+                    <div class = "user-box">
+                    <label for="email"> email</label>
+                    <input type="email" id="email" th:field="*{email}">
+                </div>
+                <br><span></span><br>
+                    <div class = "user-box">
+                    <label for="phone"> phone</label>
+                    <input type="text" id="phone" th:field="*{number}">
+                </div>
+                <span></span><br>
+                <button type="submit" class="submit-button"> Send </button>
+            </form>
+        </div>
     </div>
 
 </body>
