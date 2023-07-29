@@ -8,7 +8,12 @@
 </head>
 <body>
     <div class="container">
-
+        <h2>Did you leave us with contact to you? </h2>
+        <h4>Find yourself on this list if u want to make sure!</h4>
+        <div th:each = "contact : ${contactsList}">
+            <span th:text="${contact.email}"></span>
+            <span th:text="${contact.number}"></span>
+        </div>
     </div>
 </body>
 </html>

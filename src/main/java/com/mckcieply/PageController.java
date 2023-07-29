@@ -1,5 +1,6 @@
 package com.mckcieply;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,13 +8,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
+
 @Controller
 public class PageController {
-    private final ContactRepository contactRepository;
 
-    public PageController(ContactRepository contactRepository) {
-        this.contactRepository = contactRepository;
-    }
+    @Autowired
+    private ContactService contactService;
+
 
     @RequestMapping(value = "/")
     public String index() {
@@ -39,11 +42,9 @@ public class PageController {
     }
 
     @RequestMapping(value ="/allContacts")
-    public String contacts(){
+    public String getAll(Model model){
+        List<ContactForm> contacts = contactService.getAll();
+        model.addAttribute("contactsList", contacts);
         return "contacts";
-    }
-    @RequestMapping(value ="/temp")
-    public ResponseEntity getAllContacts() {
-        return ResponseEntity.ok(this.contactRepository.findAll());
     }
 }

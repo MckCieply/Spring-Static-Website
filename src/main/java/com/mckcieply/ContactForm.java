@@ -32,6 +32,11 @@ public class ContactForm {
         this.email = email;
     }
 
+    public ContactForm() {
+
+    }
+
+
     @Override
     public String toString() {
         return "ContactForm{" +
