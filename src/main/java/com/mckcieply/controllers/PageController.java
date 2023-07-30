@@ -1,10 +1,10 @@
-package com.mckcieply;
+package com.mckcieply.controllers;
 
+import com.mckcieply.models.Contact;
+import com.mckcieply.services.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,20 +30,20 @@ public class PageController {
 
     @RequestMapping(value = "/contact")
     public String contact(Model model) {
-        model.addAttribute("contact",new ContactForm());
+        model.addAttribute("contact",new Contact());
         return "contact";
     }
 
     @PostMapping("/index")
-    public String leaveContact(@ModelAttribute ContactForm contactForm){
-        System.out.println(contactForm.toString());
+    public String leaveContact(@ModelAttribute Contact contact){
+        System.out.println(contact.toString());
 
         return "index";
     }
 
     @RequestMapping(value ="/allContacts")
     public String getAll(Model model){
-        List<ContactForm> contacts = contactService.getAll();
+        List<Contact> contacts = contactService.getAll();
         model.addAttribute("contactsList", contacts);
         return "contacts";
     }

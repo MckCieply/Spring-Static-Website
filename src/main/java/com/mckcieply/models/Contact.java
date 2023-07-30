@@ -1,4 +1,4 @@
-package com.mckcieply;
+package com.mckcieply.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name="contact")
-public class ContactForm {
+public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -32,7 +32,7 @@ public class ContactForm {
         this.email = email;
     }
 
-    public ContactForm() {
+    public Contact() {
 
     }
 
