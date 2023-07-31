@@ -16,4 +16,8 @@ public class ContactService {
     public List<Contact> getAll(){
         return contactRepository.findAll();
     }
+
+    public void save(Contact contact){
+        contactRepository.save(contact);
+    }
 }

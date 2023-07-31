@@ -36,7 +36,7 @@ public class PageController {
 
     @PostMapping("/index")
     public String leaveContact(@ModelAttribute Contact contact){
-        System.out.println(contact.toString());
+        contactService.save(contact);
 
         return "index";
     }
