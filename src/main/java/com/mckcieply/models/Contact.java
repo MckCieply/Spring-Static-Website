@@ -9,9 +9,8 @@ import jakarta.validation.constraints.Size;
 public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @NotNull
-    @Size(min=9, max=12)
     private int number;
     @NotNull
     private String email;
@@ -35,8 +34,9 @@ public class Contact {
 
     @Override
     public String toString() {
-        return "ContactForm{" +
-                "number=" + number +
+        return "Contact{" +
+                "id=" + id +
+                ", number=" + number +
                 ", email='" + email + '\'' +
                 '}';
     }
