@@ -36,7 +36,12 @@ body{
 ol{
     text-align: left;
 }
-
+a{
+    color:ghostwhite;
+}
+a:hover{
+    color: red;
+}
 /*Scrollbar*/
 
 ::-webkit-scrollbar {
