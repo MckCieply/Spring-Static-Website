@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <h5>Back to <a href="/">Home</a></h5>
+        <div class = "login-box">
+            <form>
+                <div class = "user-box">
+                    <label for="login"> login </label>
+                    <input type="text" id="login">
+                </div>
+                <br><span></span><br>
+                <div class = "user-box">
+                    <label for="email"> email </label>
+                    <input type="email" id="email">
+                </div>
+                <br><span></span><br>
+                <div class = "user-box">
+                    <label for="password"> password </label>
+                    <input type="text" id="password">
+                </div>
+                <br><span></span><br>
+                <div class = "user-box">
+                    <label for="repeat_password"> Repeat Password </label>
+                    <input type="text" id="repeat_password">
+                </div>
+
+                <button type="submit" class="submit-button"> Send </button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
