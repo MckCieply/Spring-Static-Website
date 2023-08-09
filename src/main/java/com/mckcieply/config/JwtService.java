@@ -16,9 +16,14 @@ public class JwtService {
     @Value("${secret.key}")
     private static String SECRET_KEY;
     public String extractUsername(String token) {
-        return null;
+        return extractClaim(token, Claims::getSubject);
     }
 
+    public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
+        final Claims claims = extractAllClaims(token);
+        return claimsResolver.apply(claims);
+
+    }
     private Claims extractAllClaims(String token) {
         return Jwts.parserBuilder().setSigningKey(getSigningKey()).build().parseClaimsJws(token).getBody();
     }
