@@ -5,6 +5,7 @@ import com.mckcieply.auth.LoginRequest;
 import com.mckcieply.auth.RegisterRequest;
 import com.mckcieply.services.AuthenticationService;
 import lombok.RequiredArgsConstructor;
+import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/auth")
+@RequestMapping("/auth")
 @RequiredArgsConstructor
 public class AuthenticationController {
 
@@ -25,6 +26,10 @@ public class AuthenticationController {
     @PostMapping("/login")
     public ResponseEntity<AuthenticationResponse> login( @RequestBody LoginRequest request){
         return ResponseEntity.ok(authenticationService.login(request));
+    }
+    @RequestMapping("/demo")
+    public ResponseEntity<String> sayHello(){
+        return ResponseEntity.ok("Hello from secured place");
     }
 
 }
